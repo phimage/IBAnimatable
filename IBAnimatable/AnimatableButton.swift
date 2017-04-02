@@ -171,4 +171,81 @@ open class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderD
     configureBorder()
     configureMaskShadow()
   }
+
+  let touchAnimator: TouchAnimator? = TouchAnimator.zoomOutIn
+  var touchAnimationConfiguration: AnimationConfiguration {
+    return AnimationConfiguration(damping: 0, velocity: 1, duration: 0.3, delay: 0, force: 1)
+  }
+
+  override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    touchAnimator?.touchesBegan(touches, on: self, configuration: touchAnimationConfiguration)
+  }
+
+  open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesMoved(touches, with: event)
+    touchAnimator?.touchesMoved(touches, on: self, configuration: touchAnimationConfiguration)
+  }
+
+  override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    touchAnimator?.touchesEnded(touches, on: self, configuration: touchAnimationConfiguration)
+    super.touchesEnded(touches, with: event)
+  }
+
+  override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    touchAnimator?.touchesCancelled(touches, on:self, configuration: touchAnimationConfiguration)
+    super.touchesCancelled(touches, with: event)
+  }
+
 }
+
+enum TouchAnimator {
+  // XXX add parameters like scale and alpha
+  case zoomOutIn
+
+  // XXX could also add tevent
+  func touchesBegan(_ touches: Set<UITouch>, on view: UIView, configuration: AnimationConfiguration) {
+    // TODO sitch case according to animator
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   options: .curveEaseIn,
+                   animations: {() -> Void in
+                    view.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+                    view.alpha = 0.7
+    },
+                   completion: nil
+    )
+
+  }
+
+  func touchesEnded(_ touches: Set<UITouch>, on view: UIView, configuration: AnimationConfiguration){
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   options: .curveEaseIn,
+                   animations: {() -> Void in
+                    view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    view.alpha = 1
+    },
+                   completion: nil
+    )
+  }
+
+  func touchesCancelled(_ touches: Set<UITouch>, on view: UIView, configuration: AnimationConfiguration){
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   options: .curveEaseIn,
+                   animations: {() -> Void in
+                    view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    view.alpha = 1
+    },
+                   completion: nil
+    )
+  }
+  
+  
+  func touchesMoved(_ touches: Set<UITouch>, on view: UIView, configuration: AnimationConfiguration){
+  
+  }
+}
+
+
