@@ -48,36 +48,48 @@ extension MaskDesignable {
 
   func configureMask(in view: UIView, previousMaskType: MaskType) {
     if case .none = maskType {
-      removePreviousMask(previousMaskType, in: view)
+       MaskUtils.removePreviousMask(previousMaskType, in: view)
     } else {
-      let path = maskType.bezierPath(in: view.bounds)
-      draw(path, in: view)
+      MaskUtils.installMask(maskType, in: view)
     }
   }
+}
 
-  private func removePreviousMask(_ previousMaskType: MaskType, in view: UIView) {
+struct MaskUtils {
+  /**
+   Draw a Bezier path on `layer.mask` using `CAShapeLayer`.
+
+   - Parameter path: The Bezier path to draw.
+   */
+  static func installMask(_ maskType: MaskType, in view: UIView) {
+    let path = maskType.bezierPath(in: view.bounds)
+    view.layer.mask?.removeFromSuperlayer()
+
+    let maskLayer = CAShapeLayer()
+    maskLayer.frame = CGRect(origin: .zero, size: view.bounds.size)
+    
+   /* let anim = CABasicAnimation(keyPath: "path")
+
+    anim.fromValue = initpath.cgPath
+    anim.toValue = path.cgPath
+    anim.duration = 3.0
+    anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    
+    maskLayer.add(anim, forKey: nil)*/
+    
+    maskLayer.path = path.cgPath
+    if path.usesEvenOddFillRule {
+      maskLayer.fillRule = kCAFillRuleEvenOdd
+    }
+    view.layer.mask = maskLayer
+  }
+  
+  static func removePreviousMask(_ previousMaskType: MaskType, in view: UIView) {
     // If `previousMaskType` is `.none`, then we will **not** remove `layer.mask` before re-adding it. This allows for custom masks to be preserved.
     if case .none = previousMaskType {
       return
     } else {
       view.layer.mask?.removeFromSuperlayer()
     }
-  }
-
-  /**
-   Draw a Bezier path on `layer.mask` using `CAShapeLayer`.
-
-   - Parameter path: The Bezier path to draw.
-   */
-  private func draw(_ path: UIBezierPath, in view: UIView) {
-    view.layer.mask?.removeFromSuperlayer()
-
-    let maskLayer = CAShapeLayer()
-    maskLayer.frame = CGRect(origin: .zero, size: view.bounds.size)
-    maskLayer.path = path.cgPath
-    if path.usesEvenOddFillRule {
-      maskLayer.fillRule = kCAFillRuleEvenOdd
-    }
-    view.layer.mask = maskLayer
   }
 }

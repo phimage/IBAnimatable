@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		3676E7D02059457A0003B9DF /* AnimatableActivityIndicatorView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22A1ECD7D8A00F74840 /* AnimatableActivityIndicatorView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7D12059457A0003B9DF /* AnimatableBarButtonItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22B1ECD7D8A00F74840 /* AnimatableBarButtonItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7D22059457A0003B9DF /* AnimatableButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22C1ECD7D8A00F74840 /* AnimatableButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +23,8 @@
 		3676E7DD2059457A0003B9DF /* AnimatableTextView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2371ECD7D8A00F74840 /* AnimatableTextView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7DE2059457A0003B9DF /* AnimatableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2381ECD7D8A00F74840 /* AnimatableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
+		7E1BAD3020887F4B00E919A2 /* TouchAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1BAD2F20887F4B00E919A2 /* TouchAnimationType.swift */; };
 		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -220,6 +221,7 @@
 
 /* Begin PBXFileReference section */
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
+		7E1BAD2F20887F4B00E919A2 /* TouchAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAnimationType.swift; sourceTree = "<group>"; };
 		C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 			children = (
 				E27FD1DA1ECD7D8A00F74840 /* ActivityIndicatorType.swift */,
 				E27FD1DB1ECD7D8A00F74840 /* AnimationType.swift */,
+				7E1BAD2F20887F4B00E919A2 /* TouchAnimationType.swift */,
 				E27FD1DC1ECD7D8A00F74840 /* BlurEffectStyle.swift */,
 				E27FD1DD1ECD7D8A00F74840 /* BorderSide.swift */,
 				E27FD1DE1ECD7D8A00F74840 /* BorderType.swift */,
@@ -1070,6 +1073,7 @@
 				E27FD28F1ECD7D8A00F74840 /* TransitionType.swift in Sources */,
 				E27FD2CF1ECD7D8A00F74840 /* AnimatableTableViewCell.swift in Sources */,
 				E27FD2821ECD7D8A00F74840 /* ColorType.swift in Sources */,
+				7E1BAD3020887F4B00E919A2 /* TouchAnimationType.swift in Sources */,
 				E27FD2641ECD7D8A00F74840 /* PanInteractiveAnimator.swift in Sources */,
 				E27FD23E1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				E27FD2811ECD7D8A00F74840 /* BorderType.swift in Sources */,

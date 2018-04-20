@@ -145,7 +145,7 @@ extension MaskType {
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:
-      return UIBezierPath()
+      return UIBezierPath(rect: rect)
     }
   }
 
