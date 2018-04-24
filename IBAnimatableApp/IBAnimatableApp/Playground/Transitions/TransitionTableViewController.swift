@@ -224,6 +224,10 @@ fileprivate extension TransitionAnimationType {
       return "explode" + "(\(x),\(min),\(max))"
     case .explode:
       return "explode"
+    case .motion:
+      return "motion"
+    case .circular:
+      return "circular"
     case .none:
       return "none"
     }

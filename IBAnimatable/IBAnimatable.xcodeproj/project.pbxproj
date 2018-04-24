@@ -25,6 +25,8 @@
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		7E1BAD3020887F4B00E919A2 /* TouchAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1BAD2F20887F4B00E919A2 /* TouchAnimationType.swift */; };
+		C4398FBC208EC8A70090BE54 /* CircularAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4398FBB208EC8A60090BE54 /* CircularAnimator.swift */; };
+		C43FFAE6208CA8F6007B1EB6 /* MotionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43FFAE5208CA8F6007B1EB6 /* MotionAnimator.swift */; };
 		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -222,6 +224,8 @@
 /* Begin PBXFileReference section */
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
 		7E1BAD2F20887F4B00E919A2 /* TouchAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAnimationType.swift; sourceTree = "<group>"; };
+		C4398FBB208EC8A60090BE54 /* CircularAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularAnimator.swift; sourceTree = "<group>"; };
+		C43FFAE5208CA8F6007B1EB6 /* MotionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimator.swift; sourceTree = "<group>"; };
 		C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
@@ -657,6 +661,7 @@
 			isa = PBXGroup;
 			children = (
 				E27FD1C41ECD7D8A00F74840 /* CardsAnimator.swift */,
+				C4398FBB208EC8A60090BE54 /* CircularAnimator.swift */,
 				E27FD1C51ECD7D8A00F74840 /* ExplodeAnimator.swift */,
 				E27FD1C61ECD7D8A00F74840 /* FadeAnimator.swift */,
 				E27FD1C71ECD7D8A00F74840 /* FlipAnimator.swift */,
@@ -666,6 +671,7 @@
 				E27FD1CB1ECD7D8A00F74840 /* SlideAnimator.swift */,
 				E27FD1CC1ECD7D8A00F74840 /* SystemTransitionAnimator.swift */,
 				E27FD1CD1ECD7D8A00F74840 /* TurnAnimator.swift */,
+				C43FFAE5208CA8F6007B1EB6 /* MotionAnimator.swift */,
 			);
 			path = TransitionAnimator;
 			sourceTree = "<group>";
@@ -1071,6 +1077,7 @@
 				E27FD25F1ECD7D8A00F74840 /* PresentationPresenter.swift in Sources */,
 				C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */,
 				E27FD28F1ECD7D8A00F74840 /* TransitionType.swift in Sources */,
+				C43FFAE6208CA8F6007B1EB6 /* MotionAnimator.swift in Sources */,
 				E27FD2CF1ECD7D8A00F74840 /* AnimatableTableViewCell.swift in Sources */,
 				E27FD2821ECD7D8A00F74840 /* ColorType.swift in Sources */,
 				7E1BAD3020887F4B00E919A2 /* TouchAnimationType.swift in Sources */,
@@ -1119,6 +1126,7 @@
 				E27FD23A1ECD7D8A00F74840 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				E27FD24F1ECD7D8A00F74840 /* ActivityIndicatorAnimationLineScale.swift in Sources */,
 				E27FD2CC1ECD7D8A00F74840 /* AnimatableSlider.swift in Sources */,
+				C4398FBC208EC8A70090BE54 /* CircularAnimator.swift in Sources */,
 				E27FD2481ECD7D8A00F74840 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E27FD2781ECD7D8A00F74840 /* AnimatablePresentationController.swift in Sources */,
 				E27FD2B51ECD7D8A00F74840 /* PresentExplodeSegue.swift in Sources */,

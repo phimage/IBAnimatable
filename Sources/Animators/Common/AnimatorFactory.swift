@@ -21,6 +21,10 @@ public struct AnimatorFactory {
       return ExplodeAnimator(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle, duration: transitionDuration)
     case let .fade(direction):
       return FadeAnimator(direction: direction, duration: transitionDuration)
+    case .circular:
+      return CircularAnimator(duration: transitionDuration)
+    case .motion:
+      return MotionAnimator(duration: transitionDuration)
     case let .fold(direction, folds):
       return FoldAnimator(from: direction, folds: folds, duration: transitionDuration)
     case let .portal(direction, zoomScale):
@@ -48,8 +52,8 @@ public struct AnimatorFactory {
     case let .systemPage(type):
       return SystemTransitionAnimator(systemType: TransitionAnimationType.SystemTransitionType(pageType: type), duration: transitionDuration)
     case let .systemCameraIris(hollowState):
-    return SystemTransitionAnimator(systemType: TransitionAnimationType.SystemTransitionType(hollowState: hollowState), duration: transitionDuration)
-    default:
+      return SystemTransitionAnimator(systemType: TransitionAnimationType.SystemTransitionType(hollowState: hollowState), duration: transitionDuration)
+    case .none:
       return nil
     }
   }

@@ -29,6 +29,8 @@ public enum TransitionAnimationType {
   case systemReveal(from: Direction)
   case systemPage(type: PageType)
   case systemCameraIris(hollowState: HollowState)
+  case motion
+  case circular
 
   public var stringValue: String {
     return String(describing: self)
@@ -99,7 +101,7 @@ extension TransitionAnimationType {
       return .systemPage(type: type.opposite)
     case let .systemCameraIris(state):
       return .systemCameraIris(hollowState: state.opposite)
-    case .none, .systemRotate, .systemSuckEffect, .systemRippleEffect, .explode:
+    case .none, .systemRotate, .systemSuckEffect, .systemRippleEffect, .explode, .motion, .circular:
       return self
     }
   }
@@ -177,6 +179,10 @@ extension TransitionAnimationType: IBEnum {
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       let isFade = params.contains("fade")
       self = .slide(to: direction, isFade: isFade)
+    case "motion":
+      self = .motion
+    case "circular":
+      self = .circular
     default:
       self = .none
     }

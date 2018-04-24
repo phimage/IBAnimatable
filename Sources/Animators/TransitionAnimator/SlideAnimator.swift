@@ -6,7 +6,7 @@
 import UIKit
 
 public class SlideAnimator: NSObject, AnimatedTransitioning {
-  // MARK: - AnimatorProtocol
+  // MARK: - AnimatedTransitioning
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?

@@ -7,7 +7,7 @@ import UIKit
 
 public class CardsAnimator: NSObject, AnimatedTransitioning {
 
-  // MARK: - AnimatorProtocol
+  // MARK: - AnimatedTransitioning
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?

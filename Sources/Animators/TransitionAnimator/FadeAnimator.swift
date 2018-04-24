@@ -6,7 +6,7 @@
 import UIKit
 
 public class FadeAnimator: NSObject, AnimatedTransitioning {
-  // MARK: - AnimatorProtocol
+  // MARK: - AnimatedTransitioning
   public var transitionAnimationType: TransitionAnimationType = .fade(direction: .cross)
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType? = .fade(direction: .cross)
